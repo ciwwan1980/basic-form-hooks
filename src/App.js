@@ -1,14 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 
 function App() {
+
+  const [values, setValues]= useState({
+    firstName:"", 
+    lastName:"", 
+    email:""
+  })
+
   return (
     <div className="form-container">
   
     <form className="register-form">
     <input
           id="first-name"
-          class=""
+          class="form-field"
           type="text"
           placeholder="First Name"
           name="firstName"
@@ -16,20 +23,21 @@ function App() {
     
      <input
           id="last-name"
-          class=""
+          className="form-field"
           type="text"
           placeholder="Last Name"
           name="lastName"
         />
          <input
           id="email"
-          class=""
+          className="form-field"
           type="text"
           placeholder="Email"
           name="email"
         />
 
-        <button class="form-field" type="submit">
+        <button className="form-field" type="submit">
+        
           Register
         </button>
     </form>

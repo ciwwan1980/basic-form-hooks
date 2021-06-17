@@ -27,4 +27,17 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   padding: 10px;
+  border: 2px solid rgb(25, 114, 59);
 } 
+
+.form-field {
+  margin: 10px 0 10px 0;
+  padding: 15px;
+  font-size: 16px;
+  border: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+input {
+  background: #f2f2f2;
+}
