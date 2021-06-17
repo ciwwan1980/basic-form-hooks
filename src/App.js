@@ -30,10 +30,15 @@ const [submitted, setSubmitted]= useState(false)
     });
   };
 
+  const handleSubmit=(e)=>{
+    e.preventDefault()
+    setSubmitted(true)
+  }
+
 
   return (
     <div className="form-container">
-      <form className="register-form">
+      <form className="register-form" onSubmit={handleSubmit}>
 
       {submitted ? <div className="success-message">ThankYou! You have registered successfully</div>: null }
         <input
