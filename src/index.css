@@ -52,3 +52,10 @@ button {
 button:disabled {
   cursor: default;
 }
+
+.success-message {
+  font-family: "Roboto", sans-serif;
+  background-color: #3f89f8;
+  padding: 15px;
+  color: white;
+}

@@ -7,7 +7,7 @@ function App() {
     lastName: "",
     email: "",
   });
-
+const [submitted, setSubmitted]= useState(false)
   const handleInputFirsNameChange = (e) => {
     console.log(e.target.value);
     setValues({
@@ -30,10 +30,12 @@ function App() {
     });
   };
 
-  
+
   return (
     <div className="form-container">
       <form className="register-form">
+
+      {submitted ? <div className="success-message">ThankYou! You have registered successfully</div>: null }
         <input
           onChange={handleInputFirsNameChange}
           value={values.firstName}
