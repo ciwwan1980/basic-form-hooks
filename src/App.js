@@ -1,12 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="form-container">
   
-  <p>birthday reminder</p>
+    <form className="register-form">
+    <input
+          id="first-name"
+          class=""
+          type="text"
+          placeholder="First Name"
+          name="firstName"
+        />
+    
+     <input
+          id="last-name"
+          class=""
+          type="text"
+          placeholder="Last Name"
+          name="lastName"
+        />
+         <input
+          id="email"
+          class=""
+          type="text"
+          placeholder="Email"
+          name="email"
+        />
+
+        <button class="form-field" type="submit">
+          Register
+        </button>
+    </form>
     </div>
   );
 }
