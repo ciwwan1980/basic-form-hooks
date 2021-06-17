@@ -9,11 +9,23 @@ function App() {
     email:""
   })
 
+  const handleInputFirsNameChange=(e)=>{
+
+    console.log(e.target.value)
+    setValues({
+      ...values, 
+      firstName:e.target.value
+    })
+  }
+
   return (
     <div className="form-container">
   
     <form className="register-form">
     <input
+    
+          onChange={handleInputFirsNameChange}
+          value={values.firstName}
           id="first-name"
           class="form-field"
           type="text"
@@ -22,6 +34,7 @@ function App() {
         />
     
      <input
+          value={values.lastName}
           id="last-name"
           className="form-field"
           type="text"
@@ -29,6 +42,7 @@ function App() {
           name="lastName"
         />
          <input
+          value={values.email}
           id="email"
           className="form-field"
           type="text"
