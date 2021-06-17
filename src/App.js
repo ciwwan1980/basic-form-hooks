@@ -1,29 +1,40 @@
-import React, {useState} from 'react';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [values, setValues] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+  });
 
-  const [values, setValues]= useState({
-    firstName:"", 
-    lastName:"", 
-    email:""
-  })
-
-  const handleInputFirsNameChange=(e)=>{
-
-    console.log(e.target.value)
+  const handleInputFirsNameChange = (e) => {
+    console.log(e.target.value);
     setValues({
-      ...values, 
-      firstName:e.target.value
-    })
-  }
+      ...values,
+      firstName: e.target.value,
+    });
+  };
 
+  const handleInputLastNameChange = (e) => {
+    setValues({
+      ...values,
+      lastName: e.target.value,
+    });
+  };
+
+  const handleInputEmailChange = (e) => {
+    setValues({
+      ...values,
+      email: e.target.value,
+    });
+  };
+
+  
   return (
     <div className="form-container">
-  
-    <form className="register-form">
-    <input
-    
+      <form className="register-form">
+        <input
           onChange={handleInputFirsNameChange}
           value={values.firstName}
           id="first-name"
@@ -32,8 +43,9 @@ function App() {
           placeholder="First Name"
           name="firstName"
         />
-    
-     <input
+
+        <input
+          onChange={handleInputLastNameChange}
           value={values.lastName}
           id="last-name"
           className="form-field"
@@ -41,7 +53,8 @@ function App() {
           placeholder="Last Name"
           name="lastName"
         />
-         <input
+        <input
+          onChange={handleInputEmailChange}
           value={values.email}
           id="email"
           className="form-field"
@@ -51,10 +64,9 @@ function App() {
         />
 
         <button className="form-field" type="submit">
-        
           Register
         </button>
-    </form>
+      </form>
     </div>
   );
 }
