@@ -59,3 +59,10 @@ button:disabled {
   padding: 15px;
   color: white;
 }
+
+span {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: red;
+  margin-bottom: 15px;
+}
