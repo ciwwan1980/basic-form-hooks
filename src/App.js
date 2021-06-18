@@ -51,7 +51,7 @@ const [submitted, setSubmitted]= useState(false)
           name="firstName"  
          
         />
-        <span>please enter your firstName</span>
+        {submitted && !values.firstName ? <span>please enter your firstName</span> :null}
         <input
           onChange={handleInputLastNameChange}
           value={values.lastName}
@@ -61,7 +61,7 @@ const [submitted, setSubmitted]= useState(false)
           placeholder="Last Name"
           name="lastName"
         />
-         <span>please enter your lastName</span>
+         {submitted && !values.lastName ? <span>please enter your lastName</span>:null}
         <input
           onChange={handleInputEmailChange}
           value={values.email}
@@ -71,7 +71,7 @@ const [submitted, setSubmitted]= useState(false)
           placeholder="Email"
           name="email"
         />
-         <span>please enter your E-Mail</span>
+         {submitted && !values.email ?<span>please enter your E-Mail</span> :null  }
 
         <button className="form-field" type="submit">
           Register
