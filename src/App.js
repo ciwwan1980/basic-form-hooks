@@ -8,6 +8,9 @@ function App() {
     email: "",
   });
 const [submitted, setSubmitted]= useState(false)
+
+const [valid, setValid]=useState(false)
+
   const handleInputFirsNameChange = (e) => {
     console.log(e.target.value);
     setValues({
@@ -33,6 +36,9 @@ const [submitted, setSubmitted]= useState(false)
   const handleSubmit=(e)=>{
     e.preventDefault()
     setSubmitted(true)
+    if (values.firstName && values.lastName&& values.email){
+      setValid(true)
+    }
   }
 
 
@@ -40,7 +46,7 @@ const [submitted, setSubmitted]= useState(false)
     <div className="form-container">
       <form className="register-form" onSubmit={handleSubmit}>
 
-      {submitted ? <div className="success-message">ThankYou! You have registered successfully</div>: null }
+      {submitted &&valid ? <div className="success-message">ThankYou! You have registered successfully</div>: null }
         <input
           onChange={handleInputFirsNameChange}
           value={values.firstName}
